@@ -14,7 +14,7 @@ const Search = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
-  const loadProducts = async () => {
+const loadProducts = async () => {
     try {
       setError("")
       setLoading(true)
@@ -31,7 +31,7 @@ const Search = () => {
     loadProducts()
   }, [])
 
-  useEffect(() => {
+useEffect(() => {
     if (!query.trim()) {
       setFilteredProducts([])
       return
@@ -39,10 +39,10 @@ const Search = () => {
 
     const searchTerm = query.toLowerCase()
     const filtered = products.filter(product => 
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.brand.toLowerCase().includes(searchTerm) ||
-      product.category.toLowerCase().includes(searchTerm) ||
-      product.description.toLowerCase().includes(searchTerm)
+      product.name?.toLowerCase().includes(searchTerm) ||
+      product.brand?.toLowerCase().includes(searchTerm) ||
+      product.category?.toLowerCase().includes(searchTerm) ||
+      product.description?.toLowerCase().includes(searchTerm)
     )
 
     setFilteredProducts(filtered)

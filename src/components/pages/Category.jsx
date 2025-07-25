@@ -37,7 +37,7 @@ const Category = () => {
     { value: "discount", label: "Better Discount" }
   ]
 
-  const loadData = async () => {
+const loadData = async () => {
     try {
       setError("")
       setLoading(true)
@@ -47,11 +47,12 @@ const Category = () => {
         filterService.getFilters()
       ])
       
-      // Filter products by category
+      // Filter products by category using database field
       let categoryProducts = productsData
       if (categoryName !== "all") {
+        const categoryFilter = categoryName.replace("-", " ")
         categoryProducts = productsData.filter(
-          product => product.category.toLowerCase() === categoryName.replace("-", " ")
+          product => product.category?.toLowerCase() === categoryFilter.toLowerCase()
         )
       }
       
@@ -65,24 +66,24 @@ const Category = () => {
     }
   }
 
-  const applyFilters = () => {
+const applyFilters = () => {
     let filtered = [...products]
 
-    // Apply category filters
+    // Apply category filters using database field
     if (activeFilters.categories?.length > 0) {
       filtered = filtered.filter(product => 
         activeFilters.categories.includes(product.category)
       )
     }
 
-    // Apply brand filters
+    // Apply brand filters using database field
     if (activeFilters.brands?.length > 0) {
       filtered = filtered.filter(product => 
         activeFilters.brands.includes(product.brand)
       )
     }
 
-    // Apply price range filters
+    // Apply price range filters using database fields
     if (activeFilters.minPrice) {
       const minPrice = parseFloat(activeFilters.minPrice)
       filtered = filtered.filter(product => {
@@ -99,21 +100,21 @@ const Category = () => {
       })
     }
 
-    // Apply size filters
+    // Apply size filters using database field (sizes array from split comma-separated string)
     if (activeFilters.sizes?.length > 0) {
       filtered = filtered.filter(product => 
         product.sizes?.some(size => activeFilters.sizes.includes(size))
       )
     }
 
-    // Apply color filters
+    // Apply color filters using database field (colors array from split comma-separated string)
     if (activeFilters.colors?.length > 0) {
       filtered = filtered.filter(product => 
         product.colors?.some(color => activeFilters.colors.includes(color))
       )
     }
 
-    // Apply discount filters
+    // Apply discount filters using database fields
     if (activeFilters.discounts?.length > 0) {
       filtered = filtered.filter(product => {
         if (!product.discountedPrice) return false
@@ -125,7 +126,7 @@ const Category = () => {
       })
     }
 
-    // Apply sorting
+    // Apply sorting using database fields
     filtered.sort((a, b) => {
       const { price: priceA, discountedPrice: discountedA } = a
       const { price: priceB, discountedPrice: discountedB } = b

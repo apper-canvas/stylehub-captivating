@@ -40,7 +40,7 @@ const loadProduct = async () => {
       setSelectedSize(data.sizes?.[0] || "")
       setSelectedColor(data.colors?.[0] || "")
       
-      // Load recommendations
+      // Load recommendations using database field
       setLoadingRecommendations(true)
       try {
         const recommendationsData = await productService.getRecommendations(data.Id, data.category)
@@ -57,7 +57,7 @@ const loadProduct = async () => {
     }
   }
 
-  const handleAddToCart = () => {
+const handleAddToCart = () => {
     if (!product.inStock) {
       toast.error("Product is out of stock")
       return

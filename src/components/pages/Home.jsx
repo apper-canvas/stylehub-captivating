@@ -45,7 +45,7 @@ const Home = () => {
     }
   ]
 
-  const loadFeaturedProducts = async () => {
+const loadFeaturedProducts = async () => {
     try {
       setError("")
       setLoading(true)

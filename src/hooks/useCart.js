@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { productService } from "@/services/api/productService"
+import { useEffect, useState } from "react";
+import { productService } from "@/services/api/productService";
 
 export const useCart = () => {
   const [cartItems, setCartItems] = useState([])
@@ -20,7 +20,7 @@ export const useCart = () => {
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("stylehub-cart", JSON.stringify(cartItems))
-  }, [cartItems])
+}, [cartItems])
 
   const loadCartWithProducts = async (cartData) => {
     try {
@@ -99,7 +99,7 @@ export const useCart = () => {
     updateQuantity,
     removeFromCart,
     clearCart,
-    getCartTotal,
+getCartTotal,
     getCartCount
   }
 }
