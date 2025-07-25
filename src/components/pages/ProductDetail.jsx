@@ -12,6 +12,7 @@ import { productService } from "@/services/api/productService"
 import { useCart } from "@/hooks/useCart"
 import { useWishlist } from "@/hooks/useWishlist"
 import { toast } from "react-toastify"
+import ProductGrid from "@/components/organisms/ProductGrid"
 
 const ProductDetail = () => {
   const { productId } = useParams()
@@ -21,15 +22,16 @@ const ProductDetail = () => {
   const [error, setError] = useState("")
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState("")
-  const [selectedColor, setSelectedColor] = useState("")
+const [selectedColor, setSelectedColor] = useState("")
   const [quantity, setQuantity] = useState(1)
-
+  const [recommendations, setRecommendations] = useState([])
+  const [loadingRecommendations, setLoadingRecommendations] = useState(false)
   const { addToCart } = useCart()
   const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist()
 
   const isInWishlist = wishlistItems.some(item => item.Id === parseInt(productId))
 
-  const loadProduct = async () => {
+const loadProduct = async () => {
     try {
       setError("")
       setLoading(true)
@@ -37,6 +39,17 @@ const ProductDetail = () => {
       setProduct(data)
       setSelectedSize(data.sizes?.[0] || "")
       setSelectedColor(data.colors?.[0] || "")
+      
+      // Load recommendations
+      setLoadingRecommendations(true)
+      try {
+        const recommendationsData = await productService.getRecommendations(data.Id, data.category)
+        setRecommendations(recommendationsData)
+      } catch (recError) {
+        console.log("Failed to load recommendations:", recError)
+      } finally {
+        setLoadingRecommendations(false)
+      }
     } catch (err) {
       setError("Product not found")
     } finally {
@@ -324,9 +337,36 @@ const ProductDetail = () => {
                   <span className="text-sm text-secondary-600">Authentic products</span>
                 </div>
               </div>
-            </div>
+</div>
           </motion.div>
         </div>
+
+        {/* You May Also Like Section */}
+        {recommendations.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 border-t border-secondary-200 pt-12"
+          >
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold font-display text-secondary-800 mb-2">
+                You May Also Like
+              </h2>
+              <p className="text-secondary-600">
+                Discover more products similar to this one
+              </p>
+            </div>
+            
+            <ProductGrid
+              products={recommendations}
+              loading={loadingRecommendations}
+              error=""
+              showFilters={false}
+              className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            />
+          </motion.div>
+        )}
       </div>
     </div>
   )

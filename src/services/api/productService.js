@@ -44,7 +44,16 @@ export const productService = {
     if (index === -1) {
       throw new Error("Product not found")
     }
-    const deletedProduct = products.splice(index, 1)[0]
+const deletedProduct = products.splice(index, 1)[0]
     return { ...deletedProduct }
+  },
+
+  async getRecommendations(productId, category) {
+    await delay(200)
+    const recommendations = products
+      .filter(p => p.Id !== productId && p.category === category && p.inStock)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4)
+    return recommendations.map(p => ({ ...p }))
   }
 }
