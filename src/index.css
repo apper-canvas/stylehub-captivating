@@ -115,6 +115,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes zoomIn {
-  from { transform: scale(0.95); opacity: 0; }
+from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
 }

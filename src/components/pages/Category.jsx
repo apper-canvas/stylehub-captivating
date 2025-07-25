@@ -161,8 +161,9 @@ const Category = () => {
   const handleClearFilters = () => {
     setActiveFilters({})
   }
-
-  useEffect(() => {
+useEffect(() => {
+    // Scroll to top when category changes or component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     loadData()
   }, [categoryName])
 
