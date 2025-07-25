@@ -1,0 +1,322 @@
+[
+  {
+    "Id": 1,
+    "name": "Premium Cotton T-Shirt",
+    "brand": "StyleHub",
+    "price": 1299,
+    "discountedPrice": 999,
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["White", "Black", "Navy"],
+    "category": "Men",
+    "description": "Comfortable premium cotton t-shirt perfect for everyday wear. Made with 100% organic cotton for superior comfort and durability.",
+    "inStock": true
+  },
+  {
+    "Id": 2,
+    "name": "Floral Maxi Dress",
+    "brand": "Elegance",
+    "price": 2999,
+    "discountedPrice": 2199,
+    "images": [
+      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": ["Floral Blue", "Floral Pink"],
+    "category": "Women",
+    "description": "Beautiful floral maxi dress perfect for summer occasions. Features flowing silhouette and vibrant floral patterns.",
+    "inStock": true
+  },
+  {
+    "Id": 3,
+    "name": "Classic Denim Jeans",
+    "brand": "DenimCo",
+    "price": 2499,
+    "discountedPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1541840031508-326b77c9a17e?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["28", "30", "32", "34", "36"],
+    "colors": ["Blue", "Black"],
+    "category": "Men",
+    "description": "Classic straight-fit denim jeans made from premium denim fabric. Perfect for casual and semi-formal occasions.",
+    "inStock": true
+  },
+  {
+    "Id": 4,
+    "name": "Silk Blouse",
+    "brand": "LuxeFashion",
+    "price": 3499,
+    "discountedPrice": 2799,
+    "images": [
+      "https://images.unsplash.com/photo-1564859228273-274232fdb516?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Ivory", "Blush", "Navy"],
+    "category": "Women",
+    "description": "Elegant silk blouse perfect for office or evening wear. Made from 100% pure silk with a comfortable fit.",
+    "inStock": true
+  },
+  {
+    "Id": 5,
+    "name": "Kids Rainbow Hoodie",
+    "brand": "KidStyle",
+    "price": 1599,
+    "discountedPrice": 1199,
+    "images": [
+      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y"],
+    "colors": ["Rainbow", "Pink Rainbow"],
+    "category": "Kids",
+    "description": "Colorful rainbow hoodie for kids. Soft cotton blend material perfect for active children.",
+    "inStock": true
+  },
+  {
+    "Id": 6,
+    "name": "Leather Sneakers",
+    "brand": "FootCraft",
+    "price": 4999,
+    "discountedPrice": 3999,
+    "images": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["White", "Black", "Brown"],
+    "category": "Men",
+    "description": "Premium leather sneakers with comfortable cushioning. Perfect for casual wear and light sports activities.",
+    "inStock": true
+  },
+  {
+    "Id": 7,
+    "name": "Decorative Throw Pillow",
+    "brand": "HomeDecor",
+    "price": 799,
+    "discountedPrice": 599,
+    "images": [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["16x16", "18x18", "20x20"],
+    "colors": ["Beige", "Navy", "Terracotta"],
+    "category": "Home & Living",
+    "description": "Stylish decorative throw pillow to enhance your living space. Made with premium fabric and comfortable filling.",
+    "inStock": true
+  },
+  {
+    "Id": 8,
+    "name": "Lipstick Set",
+    "brand": "GlamBeauty",
+    "price": 1499,
+    "discountedPrice": 1199,
+    "images": [
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["Standard"],
+    "colors": ["Classic Reds", "Nude Collection", "Bold Collection"],
+    "category": "Beauty",
+    "description": "Premium lipstick collection with long-lasting formula. Includes 5 different shades in classic and trendy colors.",
+    "inStock": true
+  },
+  {
+    "Id": 9,
+    "name": "Formal Blazer",
+    "brand": "BusinessAttire",
+    "price": 5999,
+    "discountedPrice": 4799,
+    "images": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Navy", "Charcoal", "Black"],
+    "category": "Men",
+    "description": "Professional formal blazer perfect for business meetings and formal events. Tailored fit with premium fabric.",
+    "inStock": true
+  },
+  {
+    "Id": 10,
+    "name": "Summer Crop Top",
+    "brand": "TrendyWear",
+    "price": 899,
+    "discountedPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": ["White", "Pink", "Yellow"],
+    "category": "Women",
+    "description": "Trendy summer crop top perfect for casual outings. Light and breathable fabric ideal for warm weather.",
+    "inStock": true
+  },
+  {
+    "Id": 11,
+    "name": "Kids Denim Jacket",
+    "brand": "MiniStyle",
+    "price": 1999,
+    "discountedPrice": 1599,
+    "images": [
+      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-11Y"],
+    "colors": ["Light Blue", "Dark Blue"],
+    "category": "Kids",
+    "description": "Stylish denim jacket for kids. Perfect layering piece for any season with classic denim styling.",
+    "inStock": true
+  },
+  {
+    "Id": 12,
+    "name": "Ceramic Vase",
+    "brand": "ArtisanDecor",
+    "price": 1299,
+    "discountedPrice": 999,
+    "images": [
+      "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["Small", "Medium", "Large"],
+    "colors": ["White", "Terracotta", "Navy Blue"],
+    "category": "Home & Living",
+    "description": "Elegant ceramic vase perfect for displaying fresh or dried flowers. Handcrafted with unique glazing techniques.",
+    "inStock": true
+  },
+  {
+    "Id": 13,
+    "name": "Face Serum Set",
+    "brand": "SkinCare Plus",
+    "price": 2499,
+    "discountedPrice": 1999,
+    "images": [
+      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["30ml", "50ml"],
+    "colors": ["Clear"],
+    "category": "Beauty",
+    "description": "Premium face serum collection for glowing skin. Includes vitamin C, hyaluronic acid, and retinol serums.",
+    "inStock": true
+  },
+  {
+    "Id": 14,
+    "name": "Casual Polo Shirt",
+    "brand": "SportsCasual",
+    "price": 1799,
+    "discountedPrice": 1349,
+    "images": [
+      "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["White", "Navy", "Forest Green", "Burgundy"],
+    "category": "Men",
+    "description": "Classic polo shirt perfect for casual and semi-formal occasions. Made with breathable cotton pique fabric.",
+    "inStock": true
+  },
+  {
+    "Id": 15,
+    "name": "Bohemian Kimono",
+    "brand": "BohoChic",
+    "price": 2199,
+    "discountedPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["One Size"],
+    "colors": ["Floral Print", "Paisley Print", "Geometric Print"],
+    "category": "Women",
+    "description": "Flowing bohemian kimono perfect for layering. Features beautiful prints and lightweight fabric for comfort.",
+    "inStock": true
+  },
+  {
+    "Id": 16,
+    "name": "Kids Graphic Tee",
+    "brand": "FunWear",
+    "price": 699,
+    "discountedPrice": 499,
+    "images": [
+      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["2-3Y", "4-5Y", "6-7Y", "8-9Y", "10-11Y"],
+    "colors": ["Dinosaur Print", "Space Print", "Animal Print"],
+    "category": "Kids",
+    "description": "Fun graphic t-shirt for kids with colorful prints. Soft cotton material perfect for active play.",
+    "inStock": true
+  },
+  {
+    "Id": 17,
+    "name": "Wooden Coffee Table",
+    "brand": "ModernHome",
+    "price": 8999,
+    "discountedPrice": 7199,
+    "images": [
+      "https://images.unsplash.com/photo-1549497538-303791108f95?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["90cm", "120cm"],
+    "colors": ["Natural Oak", "Walnut", "White Oak"],
+    "category": "Home & Living",
+    "description": "Modern wooden coffee table perfect for living room. Sustainable wood with contemporary design.",
+    "inStock": true
+  },
+  {
+    "Id": 18,
+    "name": "Perfume Collection",
+    "brand": "Fragrance House",
+    "price": 3999,
+    "discountedPrice": 2999,
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1594736797933-d0a9ba3d8c8d?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["50ml", "100ml"],
+    "colors": ["Classic Collection", "Floral Collection", "Fresh Collection"],
+    "category": "Beauty",
+    "description": "Luxury perfume collection with long-lasting fragrances. Includes three unique scents in elegant bottles.",
+    "inStock": true
+  },
+  {
+    "Id": 19,
+    "name": "Running Shorts",
+    "brand": "ActiveWear",
+    "price": 1299,
+    "discountedPrice": 999,
+    "images": [
+      "https://images.unsplash.com/photo-1506629905607-f5f8e4f24df8?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Navy", "Gray"],
+    "category": "Men",
+    "description": "High-performance running shorts with moisture-wicking fabric. Perfect for workouts and sports activities.",
+    "inStock": true
+  },
+  {
+    "Id": 20,
+    "name": "Evening Gown",
+    "brand": "Glamour",
+    "price": 7999,
+    "discountedPrice": 5999,
+    "images": [
+      "https://images.unsplash.com/photo-1566479179817-0f6beabdc44e?w=500&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop"
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Midnight Blue", "Emerald Green", "Ruby Red"],
+    "category": "Women",
+    "description": "Elegant evening gown perfect for formal events and special occasions. Features luxurious fabric and sophisticated design.",
+    "inStock": false
+  }
+]
