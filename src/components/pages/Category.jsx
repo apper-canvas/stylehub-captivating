@@ -17,8 +17,10 @@ const Category = () => {
   const [filters, setFilters] = useState({})
   const [activeFilters, setActiveFilters] = useState({})
   const [sortBy, setSortBy] = useState("popularity")
-  const [viewMode, setViewMode] = useState("grid")
+const [viewMode, setViewMode] = useState("grid")
   const [isFilterOpen, setIsFilterOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [productsPerPage] = useState(20)
 
   const categoryTitles = {
     "men": "Men's Fashion",
@@ -47,18 +49,22 @@ const loadData = async () => {
         filterService.getFilters()
       ])
       
-      // Filter products by category using database field
+      // Filter products by category using correct field mapping
       let categoryProducts = productsData
       if (categoryName !== "all") {
         const categoryFilter = categoryName.replace("-", " ")
-        categoryProducts = productsData.filter(
-          product => product.category?.toLowerCase() === categoryFilter.toLowerCase()
-        )
+        categoryProducts = productsData.filter(product => {
+          // The product service transforms category_c to category, so use the transformed field
+          // Add fallback for both database and UI field formats
+          const productCategory = product.category || product.category_c || ""
+          return productCategory.toLowerCase() === categoryFilter.toLowerCase()
+        })
       }
       
       setProducts(categoryProducts)
       setFilteredProducts(categoryProducts)
       setFilters(filtersData)
+      setCurrentPage(1) // Reset to first page when loading new data
     } catch (err) {
       setError("Failed to load products")
     } finally {
@@ -171,6 +177,16 @@ useEffect(() => {
   useEffect(() => {
     applyFilters()
   }, [products, activeFilters, sortBy])
+// Pagination logic
+  const indexOfLastProduct = currentPage * productsPerPage
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct)
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -255,14 +271,75 @@ useEffect(() => {
             </div>
 
             {/* Products Grid */}
-            <ProductGrid
-              products={filteredProducts}
+<ProductGrid
+              products={currentProducts}
               loading={loading}
               error={error}
               onRetry={loadData}
               viewMode={viewMode}
             />
-          </div>
+
+            {/* Pagination Controls */}
+            {!loading && !error && filteredProducts.length > 0 && (
+              <div className="flex flex-col items-center space-y-4 mt-8">
+                <div className="text-sm text-secondary-600">
+                  Showing {indexOfFirstProduct + 1} to {Math.min(indexOfLastProduct, filteredProducts.length)} of {filteredProducts.length} products
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  {/* Previous Button */}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="px-3 py-2"
+                  >
+                    Previous
+                  </Button>
+
+                  {/* Page Numbers */}
+                  <div className="flex items-center space-x-1">
+                    {Array.from({ length: Math.min(totalPages, 5) }, (_, index) => {
+                      let pageNumber
+                      if (totalPages <= 5) {
+                        pageNumber = index + 1
+                      } else if (currentPage <= 3) {
+                        pageNumber = index + 1
+                      } else if (currentPage >= totalPages - 2) {
+                        pageNumber = totalPages - 4 + index
+                      } else {
+                        pageNumber = currentPage - 2 + index
+                      }
+
+                      return (
+                        <Button
+                          key={pageNumber}
+                          variant={currentPage === pageNumber ? "primary" : "outline"}
+                          size="sm"
+                          onClick={() => handlePageChange(pageNumber)}
+                          className="w-10 h-10 p-0"
+                        >
+                          {pageNumber}
+                        </Button>
+                      )
+                    })}
+                  </div>
+
+                  {/* Next Button */}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="px-3 py-2"
+                  >
+                    Next
+                  </Button>
+                </div>
+              </div>
+            )}
+</div>
         </div>
       </div>
     </div>
